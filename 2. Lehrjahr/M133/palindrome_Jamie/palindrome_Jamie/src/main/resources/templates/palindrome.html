@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrome Checker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div style="margin: 10px;" class="text-center">
+        <h1 style="font-family: 'Gentona', sans-serif; font-weight: bold;">Is it a palindrome?</h1>
+        <!-- This is the worst html i've ever written... -->
+        <div style="margin: auto; border: 2px silver; padding: 10px;">
+            <img src="images/tacodrome.jpg" style="width: 40rem" alt="A picture of a tacocat">
+            <div style="margin: auto; width: 50%; margin-top: 10px">
+                <form action="#" th:action="@{/palindrome}" th:object="${palindrome}" method="post">
+                    <div class="input-group mb-3">
+                        <input type="text" th:field="*{text}" class="form-control" placeholder="Example: Racecar">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                <div style="margin-top: 10px;">
+                    <!-- Unless nothing is displayed, display NOTHING -->
+                    <div th:if="${palindrome.result == null}"></div>
+                    <div class="alert alert-success" role="alert" th:if="${palindrome.result == 'Is a palindrome!'}">
+                        "<span th:text="${palindrome.text}"></span>" is a palindrome.
+                    </div>
+                    <div class="alert alert-danger" role="alert" th:if="${palindrome.result == 'Not a palindrome...'}">
+                        "<span th:text="${palindrome.text}"></span>" isn't a palindrome.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright text-center py-3">
+        © 2020 Copyright: By yours truly... Jamie Lam
+    </div>
+</body>
+</html>

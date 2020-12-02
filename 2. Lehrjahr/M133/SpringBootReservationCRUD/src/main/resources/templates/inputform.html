@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th=http://thymeleaf.org>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Restaurant Stierlin</title>
+    <link rel="stylesheet" href="webjars/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <a class="navbar-brand" href="/">Restaurant Stierlin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/addreservation">Reservieren</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/events">Events</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/ueberuns">Über uns</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="p-3">
+    <p class="text-center display-3">Reservation hinzufügen</p>
+
+    <form action="#" th:action="@{/addreservation}" th:object="${reservation}" method="post">
+        <p>ID: <input type="number" th:field="*{id}"/></p>
+        <p>Angaben: <input type="text" th:field="*{content}"/></p>
+        <p>Wann: <input type="date" th:field="*{when}"/></p>
+
+        <input class="btn btn-primary" type="submit" value="Bestätigen"/>
+        <a class="btn btn-warning" href="index.html">Abbrechen</a>
+
+    </form>
+</div>
+
+<footer class="page-footer font-small blue fixed-bottom">
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://ethz.ch/services/en/organisation/departments/it-services/people/person-detail.MjQ3NTEx.TGlzdC8yMTE0LC04NTM1NzczMTQ=.html">Matthias
+            Stierlin</a>
+    </div>
+</footer>
+
+</body>
+</html>

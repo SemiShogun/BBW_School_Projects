@@ -1,0 +1,1 @@
+alert("No one creates websites like these!");

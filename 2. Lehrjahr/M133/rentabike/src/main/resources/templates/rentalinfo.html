@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your rental</title>
+    <link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"></link>
+</head>
+<body>
+<h1>Deine Rental Information</h1>
+
+    <img class="img-fluid p-3" width="200" src="https://s14761.pcdn.co/wp-content/uploads/2020/01/Nukeproof-Reactor-290C-RS-Review-Test-Trail-Bike-Enduro-LR1387-1140x760.jpg"/>
+    <br>
+
+    <strong>Name: <p th:text="${rental.name}"></p></strong>
+    <br>
+    <strong>E-mail: <p th:text="${rental.email}"></p></strong>
+    <br>
+    <strong>Biketype: <p th:text="${rental.biketype}"></p></strong>
+    <br>
+    <strong>Accessoire: <p th:text="${rental.accessoire}"></p></strong>
+    <br>
+    <strong>Rentaldate: <p th:text="${rental.rentaldate}"></p></strong>
+    <br>
+    <strong>Number of days: <p th:text="${rental.numberofdays}"></p></strong>
+
+    <form action="/" method="get">
+        <input type="submit" class="btn btn-success" value="Zurück" />
+    </form>
+    <footer>
+        <p class="p-3"><small>© 2020 / Author: J.Lam</small></p>
+    </footer>
+
+</body>
+</html>

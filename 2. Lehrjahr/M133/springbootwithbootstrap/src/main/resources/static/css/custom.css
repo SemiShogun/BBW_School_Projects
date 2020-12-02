@@ -1,0 +1,11 @@
+@charset "ISO-8859-1";
+body {
+    background-color: aliceblue;
+}
+
+.reserve-positioning {
+    display: grid;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 10rem;
+}

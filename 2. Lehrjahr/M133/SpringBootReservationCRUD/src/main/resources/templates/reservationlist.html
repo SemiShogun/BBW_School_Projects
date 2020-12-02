@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th=http://thymeleaf.org >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Restaurant Stierlin</title>
+    <link rel="stylesheet" href="webjars/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <a class="navbar-brand" href="/">Restaurant Stierlin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/addreservation">Reservieren</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/events">Events</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/ueberuns">Über uns</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="p-3">
+    <div th:switch="${listOfReservations}">
+        <h4 th:case="null">No reservations have been recorded yet!</h4>
+        <div th:case="*">
+            <h4>Reservationen</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Beschreibung</th>
+                        <th>Wann</th>
+                        <th>Bearbeiten</th>
+                        <th>Löschen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="reservation : ${listOfReservations}">
+                        <td th:text="${reservation.id}"></td>
+                        <td th:text="${reservation.content}"></td>
+                        <td th:text="${reservation.when}"></td>
+                        <td><a class="btn btn-info" th:href="@{/editreservation/{id}(id=${reservation.id})}">Bearbeiten</a></td>
+                        <td><a class="btn btn-warning" th:href="@{/deletereservation?id={id}(id=${reservation.id})}">Löschen</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <a class="btn btn-info" href="/addreservation">Neue Reservation</a>
+            <a class="btn btn-warning" href="/index.html">Abbrechen</a>
+        </div>
+    </div>
+
+
+    <footer class="page-footer font-small blue fixed-bottom">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://ethz.ch/services/en/organisation/departments/it-services/people/person-detail.MjQ3NTEx.TGlzdC8yMTE0LC04NTM1NzczMTQ=.html">Matthias Stierlin</a>
+        </div>
+    </footer>
+
+    <script src="webjars/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/3.4.1/jquery.min.js"></script>
+</div>
+</body>
+</html>

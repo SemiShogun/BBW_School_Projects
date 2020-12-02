@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WuerfelGUI.Controller">
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints minWidth="200.0" prefWidth="200.0" />
+        <ColumnConstraints minWidth="200.0" prefWidth="200.0" />
+        <ColumnConstraints minWidth="200.0" prefWidth="200.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints minHeight="120.0" />
+        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="133.0" />
+        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="100.0" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="33.0" prefHeight="46.0" />
+    </rowConstraints>
+    <children>
+        <ComboBox id="dropdown" fx:id="dropdown" onAction="#initialisiere_Combobox" prefHeight="50.0" prefWidth="127.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+        <ImageView id="imageview1" fx:id="imageview1" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+        <ImageView id="imageview2" fx:id="imageview2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+        <ImageView id="imageview3" fx:id="imageview3" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+        <Button id="wuerfeln" fx:id="wuerfeln" mnemonicParsing="false" onAction="#wuerfeln" prefHeight="50.0" prefWidth="133.0" text="Wuerfeln" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+        <Label text="Anzahl Wuerfel:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+      <Label alignment="CENTER" prefHeight="57.0" prefWidth="312.0" style="-fx-font-weight: bold;" text="Würfel Spiel" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
+      <Label text="(c) Jamie Lam 2019" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+    </children>
+</GridPane>

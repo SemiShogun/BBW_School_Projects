@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<title>Iseberg Reservation erfassen</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="/">Iseberg</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link disabled" href="#">Essen</a>
+					<a class="nav-item nav-link disabled" href="/reservation">Reservieren</a>
+					<a class="nav-item nav-link active" href="/survey">Umfrage<span class="sr-only">(current)</span></a>
+					<a class="nav-item nav-link disabled" href="#">Über uns</a>
+				</div>
+			</div>
+		</nav>
+		<div class="p-3">
+			<h4 th:text="'Geschätzter '+${attendee.prename}"></h4>
+			<form action="#" th:action="@{/activitysurvey}"
+				th:object="${activity}" method="post">
+				<b>Welches Kulinarium bewerten Sie?</b>
+				<div class="algin-top col-sm-auto">
+					<div th:each="radioValue: ${listOfMeals}">
+					   	<input type="radio" th:field="*{meals}" th:value="${radioValue}" />
+    					<label class="radio" th:for="${#ids.prev('meals')}" th:text="${radioValue}"></label>
+    				</div>
+				</div>
+				<div class="col-md-4 text-right">
+					<a class="btn btn-warning" href="survey">BACK</a>
+					<input type="submit" class="btn btn-success" value="Send.." />
+					<a class="btn btn-warning" href="index.html">STOP</a>
+				</div>
+			</form>
+			<footer>
+	    		<p><small>© 2019 / Author: P.Rutschmann</small></p>
+			</footer>	
+		</div>
+		<script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="webjars/jquery/3.3.1-2/jquery.min.js"></script>			
+	</body>
+</html>

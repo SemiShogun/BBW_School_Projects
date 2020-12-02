@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Iseberg Reservations</title>
+        <link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+        <!--
+        <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+        -->
+    </head>
+    <body>
+        <div class="p-3">
+            <h4>Reservations</h4>
+            <table class="table table-striped">
+                <caption>List of the reservations</caption>
+                <thead class="custom-table">
+                    <tr>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Confirmed</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fam Muster, 4 Persons</td>
+                        <td>22/02/2019</td>
+                        <td>No</td>
+                        <td><a class="btn btn-info" href="/editreservation">Edit</a></td>
+                        <td><a class="btn btn-warning" href="/deletereservation">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>Fam Muster, 5 Persons</td>
+                        <td>22/02/2019</td>
+                        <td>No</td>
+                        <td><a class="btn btn-info" href="/editreservation">Edit</a></td>
+                        <td><a class="btn btn-warning" href="/deletereservation">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>Fam Muster, 6 Persons</td>
+                        <td>22/02/2019</td>
+                        <td>No</td>
+                        <td><a class="btn btn-info" href="/editreservation">Edit</a></td>
+                        <td><a class="btn btn-warning" href="/deletereservation">Delete</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <a class="btn btn-info" href="/addreservation">New reservation</a>
+            </div>
+            <script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+            <script src="webjars/jquery/3.3.1-2/jquery.min.js"></script>
+            <!--
+            <script src="/js/custom.js"></script>
+            -->
+        </div>
+    </body>
+</html>

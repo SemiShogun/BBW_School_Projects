@@ -1,0 +1,26 @@
+/****************************************
+* @author Jamie Lam
+* @datum 29.05.2020
+*/
+Begriffe:
+Rivella, Cola, PET Flasche, Getränk
+
+Notieren sie ab hier die Hierarchie und darunter Erklärung:
+1. Getränk
+2. PET Flasche
+3. Rivella
+
+Generalisierung:
+Generalisierung ist wenn ein Rivella die Attribute von Getränk hat.
+
+Spezialisierung:
+Spezialisierung ist wenn Rivella ein spezialisierter Version von ein Getränk ist.
+
+
+
+Klassen können höchsten einen Konstruktor haben.
+
+Der Identifier super() ruft einen Objekt der Basisklasse auf.
+
+
+Konstruktoren einer Klasse haben immer den selben Namen wie die Klasse

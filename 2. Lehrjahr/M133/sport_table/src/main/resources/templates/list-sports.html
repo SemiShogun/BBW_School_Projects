@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sportler Tabelle</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div>
+    <h4>My favorite sports</h4>
+    <div class="row">
+        <div class="col-sm-2">
+            <img src="images/icons.jpg" width="200px"/>
+        </div>
+        <div class="col-sm-2" th:switch="${listOfSports}">
+            <h4 th:case="null">
+                No Sports available yet!
+            </h4>
+            <table class="table table-striped" th:case="*">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="sport:${listOfSports}">
+                    <td th:text="${sport.name}"></td>
+                    <td th:text="${sport.surname}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div>
+    <h5>Add a new sports member!</h5>
+    <form action="#" th:action="@{/add-sport}" th:object="${newSports}" method="post" class="col-sm-4">
+        <div class="form-group">
+            <p><strong>Name:</strong></p>
+            <input type="text" class="form-control" id="nameId" th:field="*{name}" />
+            <p><strong>Surname:</strong></p>
+            <input type="text" class="form-control" id="surnameId" th:field="*{surname}" />
+        </div>
+        <p>
+            <input type="submit" class="btn btn-success" value="Add" />
+            <a class="btn btn-warning" href="delete-sport">Delete sport member</a>
+        </p>
+    </form>
+</div>
+</body>
+</html>

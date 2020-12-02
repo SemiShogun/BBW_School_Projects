@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.bbw.pr.cluedo.CluedoController">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="60.0" minHeight="75.0" prefHeight="30.0" />
+      <RowConstraints maxHeight="60.0" minHeight="75.0" prefHeight="27.857147216796875" />
+      <RowConstraints maxHeight="60.0" minHeight="75.0" prefHeight="25.285736083984375" />
+      <RowConstraints maxHeight="60.0" minHeight="75.0" prefHeight="86.71426391601562" />
+      <RowConstraints maxHeight="60.0" minHeight="75.0" prefHeight="30.0" />
+      <RowConstraints maxHeight="60.0" minHeight="75.0" prefHeight="30.0" />
+    <RowConstraints maxHeight="60.0" minHeight="75.0" prefHeight="30.0" />
+    <RowConstraints maxHeight="60.0" minHeight="75.0" prefHeight="30.0" />
+      <RowConstraints maxHeight="60.0" minHeight="37.5" prefHeight="30.0" />
+      <RowConstraints maxHeight="60.0" minHeight="37.5" prefHeight="30.0" />
+  </rowConstraints>
+   <children>
+      <RadioButton mnemonicParsing="false" text="1" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <toggleGroup>
+            <ToggleGroup fx:id="tgTaeter" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton mnemonicParsing="false" text="6" toggleGroup="$tgTaeter" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+      <RadioButton mnemonicParsing="false" text="2" toggleGroup="$tgTaeter" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+      <RadioButton mnemonicParsing="false" text="5" toggleGroup="$tgTaeter" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+      <RadioButton mnemonicParsing="false" text="4" toggleGroup="$tgTaeter" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+      <RadioButton mnemonicParsing="false" text="3" toggleGroup="$tgTaeter" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+      <Label text="People" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+      <RadioButton mnemonicParsing="false" text="6" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+         <toggleGroup>
+            <ToggleGroup fx:id="tgTatwaffe" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton mnemonicParsing="false" text="5" toggleGroup="$tgTatwaffe" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+      <RadioButton mnemonicParsing="false" text="4" toggleGroup="$tgTatwaffe" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+      <RadioButton mnemonicParsing="false" text="3" toggleGroup="$tgTatwaffe" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+      <RadioButton mnemonicParsing="false" text="2" toggleGroup="$tgTatwaffe" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+      <RadioButton mnemonicParsing="false" text="1" toggleGroup="$tgTatwaffe" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <Label text="Weapons" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+      <Label text="Rooms" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+      <RadioButton mnemonicParsing="false" text="1" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <toggleGroup>
+            <ToggleGroup fx:id="tgTatort" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton mnemonicParsing="false" text="2" toggleGroup="$tgTatort" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+      <RadioButton mnemonicParsing="false" text="3" toggleGroup="$tgTatort" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+      <RadioButton mnemonicParsing="false" text="4" toggleGroup="$tgTatort" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+      <RadioButton mnemonicParsing="false" text="5" toggleGroup="$tgTatort" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+      <RadioButton mnemonicParsing="false" text="6" toggleGroup="$tgTatort" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+      <RadioButton mnemonicParsing="false" text="7" toggleGroup="$tgTatort" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+      <RadioButton mnemonicParsing="false" text="8" toggleGroup="$tgTatort" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.rowSpan="2" />
+      <Button fx:id="btRaten" mnemonicParsing="false" prefHeight="25.0" prefWidth="161.0" text="Guess!" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+      <Button fx:id="btClear" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="Clear!" GridPane.halignment="CENTER" />
+      <Button fx:id="btNewGame" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="New Game!" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+      <TextArea fx:id="taEverything" prefHeight="160.0" prefWidth="143.0" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="6" />
+      <Label fx:id="taErgebnis" text="Correct guesses: " GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+      <Label text="Total Guesses:" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+   </children>
+</GridPane>

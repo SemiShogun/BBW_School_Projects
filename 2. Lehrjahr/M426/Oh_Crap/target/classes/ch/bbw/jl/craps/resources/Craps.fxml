@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.bbw.jl.craps.Controller">
+   <children>
+      <HBox>
+         <children>
+            <Label text="Welcome Back ">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label fx:id="placeHolder" text="NamePlaceHolder">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font></Label>
+         </children>
+      </HBox>
+      <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Oh Crap!">
+         <font>
+            <Font name="Comic Sans MS Bold" size="43.0" />
+         </font>
+      </Label>
+      <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="264.0" prefWidth="600.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="dice1" fitHeight="150.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="dice2" fitHeight="150.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+         </children>
+      </GridPane>
+      <GridPane>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="btThrow" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Throw!" />
+         </children>
+      </GridPane>
+      <Label fx:id="gameResult" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308">
+         <VBox.margin>
+            <Insets bottom="20.0" top="20.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font></Label>
+   </children>
+</VBox>

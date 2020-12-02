@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Rent a bike</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"></link>
+	</head>
+	<body>
+		<div class="p-3">
+			<h4>RENT a BIKE</h4>
+			<form action="#" th:action="@{/rentabike}" th:object="${rental}" method="post" class="col-8">
+				<div class="row p-3">
+			  		<div>
+			  			<img class="img-fluid p-3" width="200" src="https://cdn.shopify.com/s/files/1/1404/5679/products/Drehmoment_Bikes_Herrenrad-042_660ab65c-2aaa-4c39-8395-4057eea33c84_2048x2048.jpg?v=1532410758" alt="The Bike" />
+			  			<p>
+			  			<img class="img-fluid p-3" width="200" src="https://cdn.shopify.com/s/files/1/1404/5679/products/Drehmoment_Titanium-041_d67f81e5-9fcc-4ebe-a8fc-786727a61b67_2048x2048.jpg?v=1532413013" alt="The Bike" />
+			  		</div>
+					<div >
+						<div class="form-group">
+							<label for="sel1">Velo-Typ:</label>
+							<select class="form-control" id="sel1" th:field="*{biketype}">
+						    	<option
+						    		th:each="dropdownValue: ${bikeTypeAllValues}"
+						    		th:value="${dropdownValue}"
+						    		th:text="${dropdownValue}"></option>
+						  	</select>
+						</div>
+						<div class="form-group">
+							<label>Ausrüstung:</label>
+							<div class="algin-top col-sm-auto" th:each="checkboxValue: ${accessoireAllValues}">
+					    		<input type="checkbox" th:field="*{accessoire}" th:value="${checkboxValue}" />
+	   							<label class="checkbox" th:for="${#ids.prev('accessoire')}" th:text="${checkboxValue}"></label>
+	   						</div>
+						</div>
+						<div class="form-group">
+							<label for="birthdate">Miete ab Datum:</label>
+							<div>
+								<input type="date" id="birthdateId" th:field="*{rentaldate}">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="nameId">Anzahl Tage</label>
+							<input type="number" class="form-control col-8" id="numberofdaysId" th:field="*{numberofdays}"/>
+						</div>
+					</div>
+				</div>
+				
+				<h5>Angaben zum Kunden</h5>
+				<div class="form-group">
+					<label for="nameId">Name:</label>
+					<input type="text" class="form-control " id="nameId" th:field="*{name}"/>
+				</div>
+				<div class="form-group">
+					<label for="prenameId">Email:</label>
+					<input type="text"	class="form-control" id="emailId" th:field="*{email}" />
+				</div>
+				<p class="form-group">
+					<input type="submit" class="btn btn-success" value="Mieten" />
+				</p>
+			</form>
+			</div>
+			<footer>
+		    	<p class="p-3"><small>© 2020 / Author: J.Lam</small></p>
+			</footer>
+		</div>
+
+	</body>
+</html>

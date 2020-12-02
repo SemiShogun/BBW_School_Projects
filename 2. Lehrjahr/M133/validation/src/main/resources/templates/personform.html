@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Personen Daten Evaluieren</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"></head>
+<body>
+<div class="p-3">
+    <h4>Person-Daten evaluieren</h4>
+    <form action="#" th:action="@{/}" th:object="${newPerson}" method="post" class="col-sm-6">
+        <div class="form-group">
+            <label for="nameinput">Name:</label>
+            <input type="text" class="form-control" id="nameinput" th:field="*{name}" />
+            <b th:if="${#fields.hasErrors('name')}" style="color:red" th:errors="*{name}">Darf nicht leer sein</b>
+        </div>
+        <div class="form-group">
+            <label for="ageinput">Age:</label>
+            <input type="number" class="form-control" id="ageinput" th:field="*{age}" />
+            <b th:if="${#fields.hasErrors('age')}" style="color:red" th:errors="*{age}">Muss <= 10 sein</b>
+        </div>
+        <div class="form-group">
+            <label for="gradeinput">Grade:</label>
+            <input type="number" class="form-control" step="0.5" id="gradeinput" th:field="*{grade}" />
+            <b th:if="${#fields.hasErrors('grade')}" style="color:red" th:errors="*{grade}">Muss <= 10 sein</b>
+        </div>
+        <p>
+            <input type="submit" class="btn btn-success" value="Eingabe Validieren" />
+        </p>
+    </form>
+    <footer>
+        <p><small>© 2020 / Author: J.Lam</small></p>
+    </footer>
+</div>
+</body>
+</html>

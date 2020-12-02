@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <HBox prefHeight="338.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="185.0" prefWidth="447.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label alignment="TOP_CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Door Opener">
+                     <font>
+                        <Font name="Comic Sans MS" size="47.0" />
+                     </font>
+                  </Label>
+                  <Slider fx:id="sliderOne" blockIncrement="1.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="1" showTickLabels="true" snapToTicks="true" value="2.0" />
+                  <Slider fx:id="sliderTwo" blockIncrement="1.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="1" showTickLabels="true" snapToTicks="true" value="2.0" />
+                  <Slider fx:id="sliderThree" blockIncrement="1.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="1" showTickLabels="true" snapToTicks="true" value="2.0" />
+               </children>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <VBox alignment="CENTER">
+               <children>
+                  <ImageView fx:id="image" fitHeight="180.0" fitWidth="155.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@torGeschlossen.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label text="Opening-Coefficient" />
+                  <ProgressBar fx:id="pbOne" prefHeight="18.0" prefWidth="178.0" progress="0.0" />
+                  <Label text="Attempts Left" />
+                  <ProgressBar fx:id="pbTwo" prefHeight="18.0" prefWidth="183.0" progress="0.99" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <Label text="Protocol" />
+      <ListView fx:id="protocols" prefHeight="200.0" prefWidth="600.0" />
+   </children>
+</VBox>
