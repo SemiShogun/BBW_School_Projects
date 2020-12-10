@@ -13,7 +13,7 @@ public class Application {
                 new Payment("4929 739 90 0138", "18/1/2020", "€6,42"),
                 new Payment("448584 2070332466", "27/1/2020", "€0,36"),
                 new Payment("4929 739 90 0138", "05/1/2020", "€8,04"),
-                new Payment("4929 580 36 3634", "14/4/2019", "€16,50"),
+                new Payment("448584 2070332466", "14/4/2019", "€16,50"),
                 new Payment("448 59136 30015 295", "11/1/2020", "€19,41"),
                 new Payment("455664 704112 8388", "23/4/2020", "€18,77"),
                 new Payment("4716 353 38 4339", "13/4/2019", "€4,89"),
@@ -120,11 +120,12 @@ public class Application {
 
         double recursionSum = recursionSum(payments, 0, 0);
         System.out.println("Sum using Recursions: " + recursionSum);
-        //		System.out.println("Payments: " + Arrays.toString(payments));
 
-        List<String> arrayList = new ArrayList<String>();
-        String recursionDuplicate = recursionDuplicate(payments, 0, arrayList);
-        System.out.println(recursionDuplicate);
+        List<Payment> loopDuplicates = loopDuplicates(payments, new ArrayList<Payment>());
+        System.out.println("Duplicates: " + loopDuplicates.toString());
+
+        List<Payment> recursionDuplicates = recursionDuplicates(payments, 0, new ArrayList<Payment>());
+        System.out.println("Duplicates using Recursions: " + recursionDuplicates);
     }
 
     // First you program the functions with loops
@@ -144,27 +145,28 @@ public class Application {
         return n;
     }
 
-    private static String recursionDuplicate(Payment[] payments, int i, List<String> duplicates) {
-        if (i != payments.length) {
-            String temp = payments[i].getCardnumber().replaceAll("\\s+","");
-            int amnt = 0;
-            for(int j = 0; j < payments.length; j++) {
-                if (temp.equals(payments[j].getCardnumber().replaceAll("\\s+",""))) {
-                    amnt = amnt + 1;
-                    System.out.println(amnt);
-                }
-                if (amnt >= 2) {
-                    System.out.println("Duplicate Detected " + payments[i].getCardnumber());
-                    duplicates.add(payments[j].getCardnumber().replaceAll("\\s+",""));
-                    amnt = 0;
-                }
-                if (j == payments.length - 1) {
-                    amnt = 0;
+    private static List<Payment> loopDuplicates(Payment[] payments, List<Payment> duplicates) {
+        for(int i = 0; i < payments.length; i++) {
+            for(int j = i + 1; j < payments.length; j++) {
+                if(payments[i].getCardnumber() == payments[j].getCardnumber() && !duplicates.contains(payments[i].getCardnumber())) {
+                    duplicates.add(payments[i]);
                 }
             }
-            return recursionDuplicate(payments, i + 1, duplicates);
+        }
+        return duplicates;
+    }
+
+    private static List<Payment> recursionDuplicates(Payment[] payments, int index, List<Payment> duplicates) {
+        if(index == payments.length) {
+            return duplicates;
+        }
+        for(int i = index + 1; i < payments.length; i++) {
+            if(payments[i].getCardnumber() == payments[index].getCardnumber() && !duplicates.contains(payments[i].getCardnumber())) {
+                duplicates.add(payments[i]);
+            }
         }
 
-        return duplicates.stream().distinct().collect(Collectors.joining());
+        return recursionDuplicates(payments, index + 1, duplicates);
     }
+
 }

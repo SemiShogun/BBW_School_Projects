@@ -14,8 +14,4 @@ public class Application {
         }
         findX(randomArr, n + 1);
     }
-
-    private static void oneTimesOne(int n) {
-
-    }
 }
